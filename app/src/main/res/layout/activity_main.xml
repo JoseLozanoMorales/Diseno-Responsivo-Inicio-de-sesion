@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#FAF7FA"
     tools:context=".MainActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -33,4 +34,92 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/animationView" />
+
+    <RadioGroup
+        android:layout_width="350dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#FCF9FC"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:text="Usuario y contraseña"
+                android:textColor="#192963"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="1dp"
+                app:icon="@drawable/persona"
+                app:iconGravity="textTop"
+                app:iconPadding="1dp"
+                app:iconSize="30dp"
+                app:iconTint="#192963" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#FDFDFD"
+                android:text="Huella / Face ID"
+                android:textColor="#192963"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="1dp"
+                app:icon="@drawable/huella"
+                app:iconGravity="textTop"
+                app:iconPadding="4dp"
+                app:iconSize="30dp"
+                app:iconTint="#192963" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#FDFDFD"
+                android:text="Pin de 6 dígitos"
+                android:textColor="#192963"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="1dp"
+                app:icon="@drawable/mas"
+                app:iconGravity="textTop"
+                app:iconPadding="1dp"
+                app:iconSize="30dp"
+                app:iconTint="#192963" />
+        </androidx.cardview.widget.CardView>
+
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
