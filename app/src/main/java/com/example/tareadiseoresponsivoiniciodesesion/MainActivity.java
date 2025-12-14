@@ -1,8 +1,11 @@
 package com.example.tareadiseoresponsivoiniciodesesion;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MotionEvent;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -13,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,24 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // TextView interactivo
+        TextView loginWithOtherUser = findViewById(R.id.textView_loginWithOtherUser);
+        // Usamos un OnTouchListener para dispositivos táctiles y emuladores con mouse
+        loginWithOtherUser.setOnTouchListener ((v, event) -> {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    // Cambiar el color cuando se toque el TextView
+                    loginWithOtherUser.setTextColor(Color.parseColor("#00B0FF")); // Celeste
+                    break;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    // Restaurar el color original cuando el toque se levanta
+                    loginWithOtherUser.setTextColor(Color.parseColor("#1976D2")); // Azul original
+                    break;
+            }
+            return true;
         });
     }
 }
